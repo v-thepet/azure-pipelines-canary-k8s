@@ -68,10 +68,3 @@ stages:
                 $(Pipeline.Workspace)/manifests/service.yml
               containers: '$(containerRegistry)/$(imageRepository):$(tag)'
               imagePullSecrets: azure-pipelines-canary-k8s
-
-          - task: KubernetesManifest@0
-            displayName: Deploy Fortio and ServiceMonitor
-            inputs:
-              action: 'deploy'
-              manifests: |
-                $(Pipeline.Workspace)/misc/*
