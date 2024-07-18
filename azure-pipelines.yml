@@ -73,7 +73,7 @@ stages:
             inputs:
               action: 'deploy'
               manifests: |
-                $(Pipeline.Workspace)/misc/*
+                $(Pipeline.Workspace)/misc/servicemonitor.yml
 
 - stage: PromoteRejectCanary
   displayName: Promote or Reject canary
